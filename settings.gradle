@@ -1,0 +1,15 @@
+import org.gradle.api.initialization.resolve.RepositoriesMode
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        google()
+        gradlePluginPortal()
+        mavenCentral()
+    }
+}
+
+rootProject.name = "PetApp"
+include ':app'
+include ':shared'
+project(':shared').projectDir = new File(rootDir, 'PetLibrary/shared/')
